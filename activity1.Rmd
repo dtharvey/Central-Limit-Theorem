@@ -1,0 +1,13 @@
+---
+output: html_document
+---
+
+In an earlier module we examined four types of data distributions: normal, uniform, binomial, and Poisson. We also learned that each distribution has a different mathematical expression and shape when we analyze it one sample at a time. 
+
+Interestingly, if we sample a distribution by averaging two samples at a time, the distribution of the averages begins to take on the shape of a normal distribution. You can see this on the right, which shows the distribution of single samples on the left and for other sample sizes on the right. Leave the slider set to a sample size of two and examine the shape of the four standard distributions using the pop-up menu; for now, do not explore the last two distributions.
+
+Adjust the slider or click on the play button to explore other sample sizes. Make careful note of three things for each distribution: the overall mean is unaffected by the sample's size, and the range of results narrows and the shape becomes more like a normal distribution with larger samples. These are important observations.
+
+The tendency of a distribution to take on the shape of a normal distribution is the **central limit theorem**, which tells us that we can sample an unknown distribution and treat it statistically as if it is a normal distribution as long as the samples we analyze are an average of multiple individual samples. You can demonstrate this using the last two distributions: a bimodal distribution, which mimics a material that contains two types of particles that have different amounts of an analyte, and a staircase distribution, which is just odd. Knowing that we can rely on the central limit theorem means we can use all of its statistical tools to work with our data.
+
+There are important limitations to the central limit theorem: the samples must be chosen at random and must be independent of each other, the mean and the standard deviation must be finite, and the size of the sample should be less than 10% of the population from which we are sampling. In many cases these are true.
