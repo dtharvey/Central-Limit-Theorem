@@ -1,5 +1,7 @@
 ---
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 In an earlier module we examined four types of data distributions: normal, uniform, binomial, and Poisson. We also learned that each distribution has a different mathematical expression and shape when we analyze it one sample at a time. 
