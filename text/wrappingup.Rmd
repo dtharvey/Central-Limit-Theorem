@@ -1,0 +1,41 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+
+<!-- text for wrapping up  -->
+
+#### Limitations on the Central Limit Theorem
+
+The central limit theorem tells us that the distribution of the means of random samples drawn from a population will have a normal distribution even if the population itself does not have a normal distribution. There are a couple of important limitations to this conclusion. One is that the various sources of indeterminate error that affect the analysis of samples must be independent of each other and of similar magnitude so that no one source of indeterminate error dominates the final distribution. A second limitation is that the number of individual samples that are averaged generally must be greater than approximately 30. The figures to the right shows this for an original population in the shape of a staircase (see figure in upper-left corner, which consists of four uniform distributions). The distribution of means becomes increasingly normal-like as the size of the individual samples increases from 4 to 36. 
+
+#### Source of Simulations
+
+The data for the original distributions were simulated using `R` and have the following properties: the normal distribution has 5000 individual samples drawn from a population with a mean of 25 and a standard deviation of 10 using the `rnorm()` function; the binomial distribution has 5000 individual samples drawn from a population with a mean size of 5 and a probability of 0.2 using the `rbinom()` function; the Poisson distribution has 5000 individual samples drawn from a population with an average rate of 5 using the `rpois()` function; and the uniform distribution has 5000 individual samples drawn from a population with a minimum value of 5 and a maximum value of 45 using the `runif()` function. For more details on these distributions, see the module AC3.0: Distributions of Data.
+
+The bimodal distribution is an overlay of two normal distributions each consisting of 5000 individual samples with means of 10 and 50, and standard deviations of 2 and 5, respectively. The staircase distribution is an overlay of four uniform distributions consisting of 1000, 2500, 5000, and 7500 individual samples with minimum and maximum values of 0 and 25, 25 and 50, 50 and 75, and 75 and 100, respectively.
+
+#### Additional Resources
+
+For a more in depth discussion of the distributions considered in this module, including examples of R code for simulating and plotting distributions, see Chapter 5 in [Chemometrics Using R](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Chemometrics_Using_R_(Harvey)/05%3A_The_Distribution_of_Data), which is available through the [LibreText Project](https://libretexts.org/).
+
+Additional information about the central limit theorem is available in the following articles: ["Improving Conceptions in Analytical Chemistry: The Central Limit Theorem"](https://doi.org/10.1021/ed083p1645) by Margarita Rodriguez-López and Arnaldo Carrasquillo, Jr., *J. Chem. Educ.* **2006**, *83*, 1645-1648; and ["Are My Data Normal"](https://doi.org/10.1039/C7AY90126G) by Analytical Methods Committee AMCTB No.82, *Anal. Methods*, **2017**, *9*, 5847-5850. 
+
+Another browser-based application illustrating the central limit theorem is available [here](http://195.134.76.37/applets/AppletCentralLimit/Appl_CentralLimit2.html).
