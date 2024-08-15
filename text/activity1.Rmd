@@ -1,37 +1,35 @@
 ---
-output: html_document
+output: html_fragment
 ---
 
 <!-- The following script makes it possible to use the mhchem -->
 <!-- latex package in a .Rmd file and to knit it into an .html file -->
 <!-- the font size is scaled to 90% to match text -->
 
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
+<!-- ```{=html} -->
+<!-- <script type="text/x-mathjax-config"> -->
+<!-- MathJax.Hub.Config({ -->
+<!--   TeX: { -->
+<!--     extensions: ["[Contrib]/mhchem/mhchem.js"] -->
+<!-- } -->
+<!-- }); -->
+<!-- MathJax.Hub.Config({  -->
+<!--         "HTML-CSS": { scale: 90 },  -->
+<!--         SVG: { linebreaks: { automatic:true } },  -->
+<!--  }); -->
+<!-- </script> -->
+<!-- ``` -->
 
 <!-- text for activity 1  -->
 
-As described in the introduction, the statistical analysis of samples relies on our knowing the mathematical form of the distribution of these samples. Typically we assume this distribution is normal, an understanding called the central limit theorem. In this activity you will use visual comparisons of populations and of samples drawn from these populations to appreciate why we can make this assumption. 
-
 #### Visuallizing the Central Limit Theorem
 
-Suppose we have a normally distributed population with a mean of $\mu$ and a standard deviation of $\sigma$. If we draw $i$ samples from this population one-at-a-time, we obtain the first of the two distributions shown on the right. If we collect $i$ samples of size $n$ and examine the distribution of their mean values, $\bar{x}_1, \bar{x}_2 \dots \bar{x}_i$, then we obtain the second of the two distributions shown on the right.
+The figure on the right shows histograms for two distributions, each consisting of 5000 samples drawn from a population whose actual distribution is defined by the pop-up menu. If we draw 5000 samples from this population one-at-a-time, we obtain the distribution on the left. If we collect 5000 samples, each of size $n$, where $n$ is an integer between 2 and 50, we obtain the distribution on the right. The mean and the standard deviation for each distribution is shown above the histogram.
 
 **Exercise 1**. Verify that the pop-up menu is set to "normal" and that the slider for "samples to average" is set to 2. In what ways are the two distributions on the right similar to each other and in what ways are they different from each other?
 
-**Exercise 2**. Use the slider to adjust the number of samples to average to values of 4, 9, 16, 25, 36, and 49, recording the mean and the standard deviation for each value of $n$. What is the mathematical relationship between $\mu_n$ and $\mu_1$, and between $\sigma_n$ and $\sigma_1$.
+**Exercise 2**. Use the slider to adjust the number of individual samples to average to values of 4, 9, 16, 25, 36, and 49, recording the mean and the standard deviation for each value of $n$. Examine your data and determine the relationship between $\mu_1$ and $\mu_n$, where $\mu_1$ and $\mu_n$ are the mean values for samples of size 1 and of size $n$. What is the relationship between $\sigma_1$ and $\sigma_n$, where $\sigma_1$ and $\sigma_n$ are the standard deviations for samples of size 1 and samples of size $n$.
 
-**Exercise 3**. There are other types of well-defined distributions, including the uniform, binomial, and Poisson distributions. Use the pop-up menu and the slider to explore what happens when you sample these distributions. Use your results to support the central limit theorem.
+**Exercise 3**. There are other types of well-defined distributions, including the binomial, Poisson, and uniform distributions. Use the pop-up menu and the slider to explore what happens when you sample these distributions. Explain how your results are consistent with the central limit theorem.
 
-**Exercise 4**. Many samples do not follow a well-defined distribution. For example, if the material we are sampling has two types of particles, each with a different amount of analyte, then it will show a bimodal distribution. Use the pop-up menu to select the bimodal distribution and determine if the central limit theorem applies in this case.  
+**Exercise 4**. Many populations do not follow a well-defined distribution. For example, if the material we are sampling has two types of particles, each with a different amount of analyte, then it will show a bimodal distribution. Use the pop-up menu to select the bimodal distribution and determine if the central limit theorem applies in this case.  

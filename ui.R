@@ -1,5 +1,6 @@
 library(shiny)
 library(shinythemes)
+library(htmltools)
 
 ui = navbarPage("AC 3.0: Central Limit Theorem",
                 theme = shinytheme("journal"),
@@ -12,6 +13,7 @@ ui = navbarPage("AC 3.0: Central Limit Theorem",
                 # open first tab
                 tabPanel("Introduction",
                  fluidRow(
+                  withMathJax(),
                   column(width = 6,
                    wellPanel(
                     includeHTML("text/introduction.html")

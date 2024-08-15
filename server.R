@@ -35,7 +35,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 5)
+            border = 1, lwd = 2, col = 3)
     
     # shade from 0 to +1
     lowlim = 0
@@ -43,7 +43,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 5)
+            border = 1, lwd = 2, col = 3)
     
     # shade from -2 to -1
     lowlim = -2
@@ -51,7 +51,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 2)
+            border = 1, lwd = 2, col = 8)
     
     # shade from -3 to -2
     lowlim = -3
@@ -59,7 +59,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 7)
+            border = 1, lwd = 2, col = 6)
     
     # shade from -4 to -3
     lowlim = -4
@@ -75,7 +75,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 2)
+            border = 1, lwd = 2, col = 8)
     
     # shade from +3 to +2
     lowlim = +2
@@ -83,7 +83,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 7)
+            border = 1, lwd = 2, col = 6)
     
     # shade from +4 to +3
     lowlim = +3
@@ -95,10 +95,10 @@ shinyServer(function(input,output){
     
     legend(x = "topright", 
            legend = c("34.13%", "13.59%", "2.14%", "0.14%"),
-           fill = c(5,2,7,1), cex = 1.5, bty = "n",
+           fill = c(3,8,6,1), cex = 1.5, bty = "n",
            title = "percentage of outcomes (by section)")
     
-    legend(x = "topleft", fill = c(5,2,7,1),
+    legend(x = "topleft", fill = c(3,8,6,1),
            legend = c("68.26%", "95.44%","99.72%", "100%"),
            title = "cumulative percentage of outcomes",
            cex = 1.5, bty = "n")
@@ -113,12 +113,12 @@ shinyServer(function(input,output){
        davg[i] = mean(sample(bimodal,input$size))
      }
      par(mfrow = c(1,2))
-     hist(bimodal, col = 2, 
+     hist(bimodal, col = 8, 
           xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
           sub = "sample size: 1",
           main = paste("mean = ", round(mean(bimodal),2), 
                               "& st dev = ", round(sd(bimodal),2)))
-     hist(davg, col = 2, 
+     hist(davg, col = 8, 
           xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
           sub = paste("sample size: ", input$size),
           main = paste("mean = ", round(mean(davg),2), 
@@ -131,12 +131,12 @@ shinyServer(function(input,output){
         davg[i] = mean(sample(normal,input$size))
       }
       par(mfrow = c(1,2))
-      hist(normal, col = 2, 
+      hist(normal, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = "sample size: 1",
            main = paste("mean = ", round(mean(normal),2), 
                         "& st dev = ", round(sd(normal),2)))
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: ", input$size),
            main = paste("mean = ", round(mean(davg),2), 
@@ -149,12 +149,12 @@ shinyServer(function(input,output){
         davg[i] = mean(sample(uniform,input$size))
       }
       par(mfrow = c(1,2))
-      hist(uniform, col = 2, 
+      hist(uniform, col = 8, 
            xlab = "values", ylab = "frequency", yaxt = "n",
            sub = "sample size: 1",
            main = paste("mean = ", round(mean(uniform),2), 
                                "& st dev = ", round(sd(uniform),2)))
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: ", input$size),
            main = paste("mean = ", round(mean(davg),2), 
@@ -167,12 +167,12 @@ shinyServer(function(input,output){
         davg[i] = mean(sample(staircase,input$size))
       }
       par(mfrow = c(1,2))
-      hist(staircase, col = 2, 
+      hist(staircase, col = 8, 
            xlab = "values", ylab = "frequency", yaxt = "n",
            sub = "sample size: 1",
            main = paste("mean = ", round(mean(staircase),2), 
                         "& st dev = ", round(sd(staircase),2)))
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "values", ylab = "frequency", yaxt = "n",
            sub = paste("sample size: ", input$size),
            main = paste("mean = ", round(mean(davg),2), 
@@ -185,12 +185,12 @@ shinyServer(function(input,output){
         davg[i] = mean(sample(binomial,input$size))
       }
       par(mfrow = c(1,2))
-      barplot(table(binomial), col = 2, 
+      barplot(table(binomial), col = 8, 
               xlab = "values", ylab = "frequency", yaxt = "n",
               sub = "sample size: 1",
               main = paste("mean = ", round(mean(binomial),2), 
                            "& st dev = ", round(sd(binomial),2)))
-      hist(davg, col = 2,  
+      hist(davg, col = 8,  
            xlab = "values", ylab = "frequency", yaxt = "n",
            sub = paste("sample size: ", input$size),
            main = paste("mean = ", round(mean(davg),2), 
@@ -203,12 +203,12 @@ shinyServer(function(input,output){
         davg[i] = mean(sample(poisson,input$size))
       }
       par(mfrow = c(1,2))
-      barplot(table(poisson), col = 2, 
+      barplot(table(poisson), col = 8, 
               xlab = "values", ylab = "frequency", yaxt = "n",
               sub = "sample size: 1",
               main = paste("mean = ", round(mean(poisson),2), 
                            "& st dev = ", round(sd(poisson),2)))
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "values", ylab = "frequency", yaxt = "n",
            sub = paste("sample size: ", input$size),
            main = paste("mean = ", round(mean(davg),2), 
@@ -226,7 +226,7 @@ shinyServer(function(input,output){
 
       par(mfrow = c(3,2))
       
-      hist(staircase, col = 2, 
+      hist(staircase, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = "sample size: 1",
            main = paste("mean = ", round(mean(staircase),2), 
@@ -236,7 +236,7 @@ shinyServer(function(input,output){
       for (i in 1:5000){
         davg[i] = mean(sample(staircase,4))
       }
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: 4"),
            main = paste("mean = ", round(mean(davg),2), 
@@ -246,7 +246,7 @@ shinyServer(function(input,output){
       for (i in 1:5000){
         davg[i] = mean(sample(staircase,9))
       }
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: 9"),
            main = paste("mean = ", round(mean(davg),2), 
@@ -257,7 +257,7 @@ shinyServer(function(input,output){
       for (i in 1:5000){
         davg[i] = mean(sample(staircase,16))
       }
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: 16"),
            main = paste("mean = ", round(mean(davg),2), 
@@ -267,7 +267,7 @@ shinyServer(function(input,output){
       for (i in 1:5000){
         davg[i] = mean(sample(staircase,25))
       }
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: 25"),
            main = paste("mean = ", round(mean(davg),2), 
@@ -277,7 +277,7 @@ shinyServer(function(input,output){
       for (i in 1:5000){
         davg[i] = mean(sample(staircase,36))
       }
-      hist(davg, col = 2, 
+      hist(davg, col = 8, 
            xlab = "outcomes", ylab = "frequency of outcomes", yaxt = "n",
            sub = paste("sample size: 36"),
            main = paste("mean = ", round(mean(davg),2), 
