@@ -1,6 +1,4 @@
-library(shiny)
-library(shinythemes)
-library(htmltools)
+# ui for central limit theorm app
 
 ui = navbarPage("AC 3.0: Central Limit Theorem",
                 theme = shinytheme("journal"),
@@ -10,7 +8,7 @@ ui = navbarPage("AC 3.0: Central Limit Theorem",
                             href = "style.css")
                 ),
                 
-                # open first tab
+                # open introduction tab
                 tabPanel("Introduction",
                  fluidRow(
                   withMathJax(),
@@ -24,8 +22,9 @@ ui = navbarPage("AC 3.0: Central Limit Theorem",
                      plotOutput("introplot", height = "700px")
                      )
                      )
-                ), # close first tab
+                ), # close introduction tab
                 
+                # open first activity tab
                 tabPanel("The Central Limit Theorem",
                  column(width = 6,
                    wellPanel(
@@ -45,20 +44,19 @@ ui = navbarPage("AC 3.0: Central Limit Theorem",
                       sliderInput(inputId = "size",
                                   label = "samples to average (n)",
                                   min = 2, max = 50, value = 2,
-                                  width = "400px", 
-                                  animate = animationOptions(interval = 1000)),
+                                  width = "400px"),
                                 ),
                    plotOutput("activity1plot", height = "600px")
                                 ),
                                 
                          
-  ), # close second tab panel
+  ), # close tabpanel for first activity
   
-  # open third tab
+  # open tab for wrapping-up
   tabPanel("Wrapping up",
              column(width = 6,
                     wellPanel(id = "wrapupPanel",
-                              style = "overflow-y:scroll; max-height: 750px",
+                              style = "overflow-y:scroll; max-height: 700px",
                               includeHTML("text/wrappingup.html")
                     )
              ),
@@ -66,13 +64,7 @@ ui = navbarPage("AC 3.0: Central Limit Theorem",
                     align = "center",
                     plotOutput("wrapupplot", height = "700px")
              )
-  ), # close third tab
-  
-  # tooltips
-  # bsTooltip(id = "dataset",
-  #           title = "Select a distribution."),
-  # bsTooltip(id = "size",
-  #           title = "Select the number of samples to average.")
+  ), # close tab for wrapping up
   
   ) # close navbar
 

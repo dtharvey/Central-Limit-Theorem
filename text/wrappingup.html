@@ -1,75 +1,61 @@
 
 
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-<!-- ```{=html} -->
-<!-- <script type="text/x-mathjax-config"> -->
-<!-- MathJax.Hub.Config({ -->
-<!--   TeX: { -->
-<!--     extensions: ["[Contrib]/mhchem/mhchem.js"] -->
-<!-- } -->
-<!-- }); -->
-<!-- MathJax.Hub.Config({  -->
-<!--         "HTML-CSS": { scale: 90 },  -->
-<!--         SVG: { linebreaks: { automatic:true } },  -->
-<!--  }); -->
-<!-- </script> -->
-<!-- ``` -->
 <!-- text for wrapping up  -->
 <div id="limitations-on-the-central-limit-theorem" class="section level4">
 <h4>Limitations on the Central Limit Theorem</h4>
 <p>The central limit theorem tells us that the distribution of the means
 of random samples drawn from a population follows a normal distribution
-even if the population itself does not follow a normal distribution.
-There are a couple of important limitations to this conclusion. One is
-that the various sources of indeterminate error that affect the
-measurements we make on our samples must be independent of each other
-and of similar magnitude so that no one source of indeterminate error
-dominates the final distribution. A second limitation is that the number
-of individual samples included in the average must generally be greater
-than approximately 30. The six figures on the right shows this for a
-population that has the shape of a staircase (see figure in upper-left
-corner, which consists of four uniform distributions). The distribution
-of means becomes increasingly normal-like as the size of the individual
-samples increases from 4 (upper right) to 36 (lower right).</p>
+even if the population of individual samples itself does not follow a
+normal distribution. There are a couple of important limitations to this
+conclusion. One is that the various sources of indeterminate error that
+affect the measurements we make on individual samples must be
+independent of each other and of similar magnitude so that no one source
+of indeterminate error dominates the shape of the final distribution. A
+second limitation is that the number of individual samples included in
+the average must generally be greater than approximately 30. The six
+figures on the right shows this for a population of individual samples
+that has the shape of a staircase (see figure in upper-left corner,
+which consists of four uniform distributions). The distribution of means
+becomes increasingly normal-like as the size of the individual samples
+increases from 4 (upper right) to 36 (lower right).</p>
 </div>
 <div id="source-of-simulations" class="section level4">
 <h4>Source of Simulations</h4>
-<p>The data for the distributions were simulated using <code>R</code>
-and have the following properties:</p>
+<p>The data for the distributions used in this module were created using
+<code>R</code> and have the following properties:</p>
 <ul>
-<li><p>the normal distribution has 5000 individual samples drawn from a
-population with a mean of 25 and a standard deviation of 10 using the
-<code>rnorm()</code> function</p></li>
-<li><p>the binomial distribution has 5000 individual samples drawn from
-a population that is number of positive results in five trials given a
-probability of 0.2 for a positive result using the <code>rbinom()</code>
-function</p></li>
-<li><p>the Poisson distribution has 5000 individual samples drawn from a
-population with an average rate of 5 using the <code>rpois()</code>
-function</p></li>
-<li><p>the uniform distribution has 5000 individual samples drawn from a
-population with a minimum value of 5 and a maximum value of 45 using the
-<code>runif()</code> function</p></li>
+<li><p>the normal distribution uses the <code>rnorm()</code> function to
+draw 5000 individual samples from a population with a mean of 25 and a
+standard deviation of 10</p></li>
+<li><p>the binomial distribution uses the <code>rbinom()</code> function
+to draw 5000 individual samples drawn from a population that is the
+number of positive results in five trials given a probability of 0.2 for
+a positive result</p></li>
+<li><p>the Poisson distribution uses the <code>rpois()</code> function
+to draw 5000 individual samples drawn from a population with an average
+rate of five</p></li>
+<li><p>the uniform distribution uses the <code>runif</code> function to
+draw 5000 individual samples from a population with a minimum value of 5
+and a maximum value of 45</p></li>
 <li><p>the bimodal distribution has 10,000 individual samples, half
 drawn from a normal distribution with a mean of 10 and a standard
 deviation of 2, and half drawn from a normal distribution with a mean of
 50 and a standard deviation of 5</p></li>
 <li><p>the staircase distribution is an overlay of four uniform
-distributions consisting of 1000, 2500, 5000, and 7500 individual
-samples with minimum and maximum values of 0 and 25, 25 and 50, 50 and
-75, and 75 and 100, respectively</p></li>
+distributions that have 1000, 2500, 5000, and 7500 individual samples
+with minimum and maximum values of 0 and 25, 25 and 50, 50 and 75, and
+75 and 100, respectively</p></li>
 </ul>
 <p>For more details on the normal, binomial, Poisson, and uniform
-distributions, see the module AC3.0: Distributions of Data.</p>
+distributions—including the equations that describe each distribution
+see the module AC3.0: Distributions of Data.</p>
 </div>
 <div id="additional-resources" class="section level4">
 <h4>Additional Resources</h4>
 <p>For a more in depth discussion of the distributions considered in
-this module, including examples of R code for simulating and plotting
-distributions, see Chapter 5 in <a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Chemometrics_Using_R_(Harvey)/05%3A_The_Distribution_of_Data">Chemometrics
+this module, including examples of <code>R</code> code for simulating
+and plotting distributions, see Chapter 5 in <a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Chemometrics_Using_R_(Harvey)/05%3A_The_Distribution_of_Data">Chemometrics
 Using R</a>, which is available through the <a href="https://libretexts.org/">LibreText Project</a>.</p>
 <p>Additional information about the central limit theorem is available
 in the following articles: <a href="https://doi.org/10.1021/ed083p1645">“Improving Conceptions in
@@ -78,6 +64,6 @@ Rodriguez-López and Arnaldo Carrasquillo, Jr., <em>J. Chem. Educ.</em>
 <strong>2006</strong>, <em>83</em>, 1645-1648; and <a href="https://doi.org/10.1039/C7AY90126G">“Are My Data Normal”</a> by
 Analytical Methods Committee AMCTB No.82, <em>Anal. Methods</em>,
 <strong>2017</strong>, <em>9</em>, 5847-5850.</p>
-<p>Another browser-based application illustrating the central limit
+<p>Another browser-based application that illustrates the central limit
 theorem is available <a href="http://195.134.76.37/applets/AppletCentralLimit/Appl_CentralLimit2.html">here</a>.</p>
 </div>

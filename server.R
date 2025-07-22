@@ -1,22 +1,8 @@
 # server for distribution app
 
-library(shiny)
-library(shinythemes)
-
-# create files needed by app here
-bimodal = c(rnorm(5000,10,2),rnorm(5000,50,5))
-normal = rnorm(5000,25,10)
-uniform = runif(5000,5,45)
-staircase = c(runif(1000,0,25),runif(2500,25,50),
-              runif(5000,50,75),runif(7500,75,100))
-binomial = rbinom(5000,5,0.2)
-poisson = rpois(5000,5)
-
-# set colors
-palette("Okabe-Ito")
-
 shinyServer(function(input,output){
-  
+ 
+# output for introduction tab 
   output$introplot = renderPlot({
     par(mar = c(5,4,1,2))
     mu = 0
@@ -35,7 +21,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 3)
+            border = 1, lwd = 2, col = 1)
     
     # shade from 0 to +1
     lowlim = 0
@@ -51,7 +37,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 8)
+            border = 1, lwd = 2, col = 1)
     
     # shade from -3 to -2
     lowlim = -3
@@ -59,7 +45,7 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 6)
+            border = 1, lwd = 2, col = 1)
     
     # shade from -4 to -3
     lowlim = -4
@@ -91,20 +77,17 @@ shinyServer(function(input,output){
     dx = seq(lowlim, upperlim, 0.01)
     polygon(x = c(lowlim, dx, upperlim), 
             y = c(0, dnorm(dx, mean = mu, sd = sigma),0),
-            border = 1, lwd = 2, col = 1)
+            border = 1, lwd = 2, col = 2)
     
-    legend(x = "topright", 
-           legend = c("34.13%", "13.59%", "2.14%", "0.14%"),
-           fill = c(3,8,6,1), cex = 1.5, bty = "n",
-           title = "percentage of outcomes (by section)")
+    legend(x = "topleft", 
+           legend = c("50.00%", "34.13%", "13.59%", "2.14%", "0.14%"),
+           fill = c(1,3,8,6,2), cex = 1.5, bty = "n",
+           title = "percentage of outcomes")
     
-    legend(x = "topleft", fill = c(3,8,6,1),
-           legend = c("68.26%", "95.44%","99.72%", "100%"),
-           title = "cumulative percentage of outcomes",
-           cex = 1.5, bty = "n")
     
   })
   
+# output for first activity tab
   output$activity1plot = renderPlot({
     
    if (input$dataset == "bimodal"){
@@ -217,6 +200,7 @@ shinyServer(function(input,output){
      
   })
   
+# output for wrapping-up tab
   output$wrapupplot = renderPlot({
  
       davg = rep(0,5000)

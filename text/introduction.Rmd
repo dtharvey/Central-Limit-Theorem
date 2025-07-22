@@ -2,36 +2,16 @@
 output: html_fragment
 ---
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-<!-- ```{=html} -->
-<!-- <script type="text/x-mathjax-config"> -->
-<!-- MathJax.Hub.Config({ -->
-<!--   TeX: { -->
-<!--     extensions: ["[Contrib]/mhchem/mhchem.js"] -->
-<!-- } -->
-<!-- }); -->
-<!-- MathJax.Hub.Config({  -->
-<!--         "HTML-CSS": { scale: 90 },  -->
-<!--         SVG: { linebreaks: { automatic:true } },  -->
-<!--  }); -->
-<!-- </script> -->
-<!-- ``` -->
-
 <!-- text for introduction -->
 
-The goal of a quantitative analysis is to determine how much analyte is present in a small sample drawn from a much larger population. For example, we might analyze five tablets of a pain reliever drawn at random from a single bottle that holds 100 tablets, obtaining results of 224.3, 240.4, 261.7, 229.4, and 246.3 mg of acetaminophen. The bottle, in turn, is drawn from all the bottles in a single production lot, which might be $10^6$ bottles. To use a sample's properties---such as its mean (246.6 mg) or its standard deviation (8.75 mg)---to learn something about the population---such as the percentage of tablets that are likely to have more than 250 mg of acetaminophen---requires that we know the mathematical properties of the population's distribution. Although there are many different types of distributions), the distribution that receives the most attention is the normal distribution.
+$\require{mhchem} \ce{}$The goal of a quantitative analysis is to determine how much analyte is present in a small sample drawn from a much larger population. For example, we might analyze five tablets of the pain reliever acetaminophen drawn at random from a single bottle that holds 100 tablets, obtaining results of 224.3, 240.4, 261.7, 229.4, and 246.3 mg of acetaminophen. The bottle, in turn, is drawn from all the bottles in a single production lot, which might be $10^4$ to $10^5$ bottles. To use a sample's properties---such as its mean (246.6 mg) or its standard deviation (8.75 mg)---to learn something about the population---such as the percentage of tablets that are likely to have more than 250 mg of acetaminophen---requires that we know the mathematical properties of the population's distribution. Although there are many different types of distributions, the distribution that receives the most attention is the normal distribution, which is defined by its mean, $\mu$ and its standard deviation, $\sigma$.
 
 #### The Normal Distribution
 
-The figure on the right shows the characteristic properties of the normal distribution for a population with a mean ($\mu$) of 0 and a standard deviation ($\sigma$) of 1. The plot shows the frequency of an outcome on the *y*-axis as a function of the possible outcomes on the *x*-axis. The normal distribution is symmetric around its mean and the most frequent outcome is the mean. 
-
-Of particular importance to us is that the percentage of a normally distributed population that falls within any range of values is defined only by the population's mean, $\mu$, and its standard deviation, $\sigma$. For example, 95.44% of the population is within two standard deviations on either side of the mean $(\mu \pm 2 \sigma)$ and 13.59% of the population falls within the range $\mu + 1 \sigma$ and $\mu + 2 \sigma$. The total area under the normal distribution curve---a cumulative probability of 100%---is the same for all populations. 
+The figure on the right is the normal distribution---a plot of the frequency of an outcome on the *y*-axis as a function of the possible outcomes on the *x*-axis---for a population that has a mean, $\mu$, of 0 and a standard deviation, $\sigma$, of 1. The normal distribution is symmetric around its mean and the most frequent outcome is the mean, $\mu$. The percentage of the normally distributed population that falls within any range of values is defined only by the population's mean and its standard deviation. For example, half of a population's members have values less than $\mu$, as shown by the area under the normal distribution shaded in black, and 34.13% have values between $\mu$ and $\mu + 1 \sigma$ as shown by the area under the normal distribution shaded in light blue. The total area under the normal distribution curve---a cumulative probability of 100%---is the same for all populations. 
 
 #### The Central Limit Theorem
 
-The well-characterized properties of a normal distribution allow us to draw conclusions about a population based on the analysis of a limited number of samples drawn at random from the population **if** we know the samples are normally distributed. The Central Limit Theorem is simply a statement that regardless of the distribution of individual samples from a population, the distribution of the means of samples are normally distributed.
+The well-characterized properties of a normal distribution allow us to draw conclusions about a population based on the analysis of a limited number of samples drawn at random from the population ***if*** we know the samples are normally distributed. The Central Limit Theorem is simply a statement that regardless of the actual distribution of the individual samples that make up a population, the distribution of the means of samples of sufficient size, $n$, drawn from that population are normally distributed.
 
 
