@@ -4,4 +4,4 @@ Introduces students to the central limit theorem. The user can select one of fou
 
 Trequired packages: `shiny`, `shinythemes`
 
-to run locally in a browser window enter `shiny::runGitHub("Central-Limit-Theorm","dtharvey", launch.browser = TRUE)` in console
+to run locally in a browser window enter `shiny::runGitHub("Central-Limit-Theorm","dtharvey", launch.browser = TRUE)` in the console
