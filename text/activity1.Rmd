@@ -4,7 +4,7 @@ output: html_fragment
 
 <!-- text for activity 1  -->
 
-#### Visuallizing the Central Limit Theorem
+#### Visualizing the Central Limit Theorem
 
 The figure on the right shows histograms for two distributions, each consisting of 5000 samples drawn from a population whose actual distribution is defined by the pop-up menu. If we draw 5000 samples from this population one-at-a-time, we obtain the distribution on the left. If we collect 5000 samples, each of size $n$, where $n$ is an integer between 2 and 50, we obtain the distribution on the right. The mean and the standard deviation for each distribution is shown above the histogram.
 
